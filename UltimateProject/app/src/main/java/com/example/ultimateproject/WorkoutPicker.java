@@ -229,8 +229,35 @@ public class WorkoutPicker {
             else if (num ==10)
                 workout.add("Chinese Planks");
         }
-        else if (workouttypes.equals("Squat")){
-            workout.add("Squat");
+            
+        else if (workouttypes.equals("Deadlifts")){
+            workout.add("Deadlifts");
+        }
+        else if (workouttypes.equals("Squats")){
+            workout.add("Squats");
+        }
+        else if (workouttypes.equals("Bench Press")){
+            workout.add("Bench Press");
+        }
+        else if (workouttypes.equals("Power Cleans")){
+            workout.add("Power Cleans");
+        }else if (workouttypes.equals("Bicep Curls")){
+            workout.add("Bicep Curls");
+        }else if (workouttypes.equals("Tricep Curls")){
+            workout.add("Tricep Curls");
+        }else if (workouttypes.equals("Militaries")){
+            workout.add("Militaries");
+        }else if (workouttypes.equals("Hip Thrusts")){
+            workout.add("Hip Thrusts");
+        }
+        else if (workouttypes.equals("Push Presses")){
+            workout.add("Push Presses");
+        }else if (workouttypes.equals("Front Squats")){
+            workout.add("Front Squats");
+        }else if (workouttypes.equals("Lat Pulldowns")){
+            workout.add("Lat Pulldowns");
+        }else if (workouttypes.equals("Single Arm Dumbbell Rows")){
+            workout.add("Single Arm Dumbbell Rows");
         }
         return workout;
     }
