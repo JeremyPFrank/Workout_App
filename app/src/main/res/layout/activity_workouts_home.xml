@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:fitsSystemWindows="true"
+    tools:context=".Workouts_Home">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/app_bar"
+        android:layout_width="match_parent"
+        android:layout_height="98dp"
+        android:fitsSystemWindows="true"
+        android:theme="@style/Theme.UltimateProject.AppBarOverlay">
+
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:id="@+id/toolbar_layout"
+            style="@style/Widget.MaterialComponents.Toolbar.Primary"
+            android:layout_width="match_parent"
+            android:layout_height="95dp"
+            android:fitsSystemWindows="true"
+            app:contentScrim="@color/black"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed"
+            app:toolbarId="@+id/toolbar">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="98dp"
+                app:layout_collapseMode="pin"
+                app:popupTheme="@style/Theme.UltimateProject.PopupOverlay">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/addworkoutbtn"
+                    android:layout_width="150px"
+                    android:layout_height="match_parent"
+                    android:textSize="58px"
+                    android:textStyle="bold"
+                    android:layout_below="@+id/noacc"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="10dp"
+                    android:backgroundTint="#DA0303"
+                    android:text="+" />
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/randomworkout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:text="ADD RANDOM EXERCISE"
+                    android:backgroundTint="#DA0303"
+                    android:onClick="onClickFindWorkout"
+                    />
+            </androidx.appcompat.widget.Toolbar>
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <include layout="@layout/content_scrolling" />
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

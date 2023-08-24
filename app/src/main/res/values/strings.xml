@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Ultimate Project</string>
+    <string name="forgot_pass">Forgot Password?</string>
+    <string name="title_activity_workouts_home">Workouts_Home</string>
+    <string name="large_text">
+        "Material is the metaphor.\n\n"
+    </string>
+    <string name="action_settings">Settings</string>
+
+
+    <string-array name="workout_types">
+        <item>Chest</item>
+        <item>Bicepts</item>
+        <item>Hamstrings</item>
+        <item>Quads</item>
+    </string-array>
+</resources>

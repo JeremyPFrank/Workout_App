@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/chest"
+        android:title="Chest"/>
+    <item
+        android:id="@+id/tricep"
+        android:title="Triceps"/>
+    <item
+        android:id="@+id/shoulders"
+        android:title="Shoulders"/>
+    <item
+        android:id="@+id/biceps"
+        android:title="Biceps"/>
+    <item
+        android:id="@+id/back"
+        android:title="Back"/>
+    <item
+        android:id="@+id/quad"
+        android:title="Quads"/>
+    <item
+        android:id="@+id/hamstrings"
+        android:title="Hamstrings"/>
+    <item
+        android:id="@+id/calves"
+        android:title="Calves"/>
+    <item
+        android:id="@+id/groin"
+        android:title="Groin/Hip"/>
+    <item
+        android:id="@+id/Glutes"
+        android:title="Glutes"/>
+</menu>
