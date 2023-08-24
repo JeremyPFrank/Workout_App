@@ -42,9 +42,10 @@
                     android:layout_margin="10dp"
                     android:backgroundTint="#DA0303"
                     android:text="+" />
+
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/randomworkout"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_marginTop="10dp"
                     android:layout_marginBottom="10dp"
@@ -54,6 +55,19 @@
                     android:backgroundTint="#DA0303"
                     android:onClick="onClickFindWorkout"
                     />
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/removeworkout"
+                    android:layout_width="150px"
+                    android:layout_height="match_parent"
+                    android:textSize="100px"
+                    android:layout_marginTop="10dp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="10dp"
+                    android:backgroundTint="#DA0303"
+                    android:text="-" />
+
+
+
             </androidx.appcompat.widget.Toolbar>
         </com.google.android.material.appbar.CollapsingToolbarLayout>
     </com.google.android.material.appbar.AppBarLayout>
