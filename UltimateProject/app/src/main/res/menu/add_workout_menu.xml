@@ -2,14 +2,38 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/deadlift"
-        android:title="Deadlift"/>
+        android:title="Deadlifts"/>
     <item
         android:id="@+id/squat"
-        android:title="Squat"/>
+        android:title="Squats"/>
     <item
         android:id="@+id/bench"
         android:title="Bench Press"/>
     <item
         android:id="@+id/clean"
-        android:title="Power Clean"/>
+        android:title="Power Cleans"/>
+    <item
+        android:id="@+id/bc"
+        android:title="Bicep Curls"/>
+    <item
+        android:id="@+id/tc"
+        android:title="Tricep Curls"/>
+    <item
+        android:id="@+id/military"
+        android:title="Militaries"/>
+    <item
+        android:id="@+id/ht"
+        android:title="Hip Thrusts"/>
+    <item
+        android:id="@+id/pp"
+        android:title="Push Presses"/>
+    <item
+        android:id="@+id/fs"
+        android:title="Front Squats"/>
+    <item
+        android:id="@+id/lp"
+        android:title="Lat Pulldowns"/>
+    <item
+        android:id="@+id/sadr"
+        android:title="Single Arm Dumbbell Rows"/>
 </menu>
