@@ -6,7 +6,37 @@
     android:layout_height="wrap_content"
     android:fitsSystemWindows="true"
     tools:context=".Workouts_Home">
-
+    <EditText
+        android:layout_width="160dp"
+        android:layout_height="65dp"
+        android:id="@+id/reps"
+        android:background="#135A02"
+        android:hint="Reps"
+        android:layout_gravity="left"
+        android:textColorHint="@color/white"
+        android:inputType="text"
+        android:textColor="@color/white"
+        android:layout_marginTop="110dp"
+        android:layout_marginLeft="20dp"
+        android:padding="20dp"
+        android:drawableLeft="@android:drawable/stat_notify_sync"
+        android:drawablePadding="20dp"
+        />
+    <EditText
+        android:id="@+id/weight"
+        android:layout_width="160dp"
+        android:layout_height="65dp"
+        android:layout_gravity="right"
+        android:layout_marginTop="110dp"
+        android:layout_marginRight="20dp"
+        android:inputType="text"
+        android:background="#135A02"
+        android:drawableLeft="@android:drawable/ic_menu_preferences"
+        android:drawablePadding="20dp"
+        android:hint="Weight"
+        android:padding="20dp"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white" />
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/app_bar"
         android:layout_width="match_parent"

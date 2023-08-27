@@ -44,6 +44,8 @@ public class Workouts_Home extends AppCompatActivity {
     Button ran_workoutbtn;
     Button remove_workoutbtn;
     Button new_workoutbtn;
+    TextView reps;
+    TextView weight;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,6 +53,8 @@ public class Workouts_Home extends AppCompatActivity {
         binding = ActivityWorkoutsHomeBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
+        reps = findViewById(R.id.reps);
+        weight = findViewById(R.id.weight);
         add_workoutbtn = findViewById(R.id.addworkoutbtn);
         ran_workoutbtn = findViewById(R.id.randomworkout);
         remove_workoutbtn = findViewById(R.id.removeworkout);
@@ -86,7 +90,7 @@ public class Workouts_Home extends AppCompatActivity {
                             builder.setPositiveButton("ADD", new DialogInterface.OnClickListener() {
                                 @Override
                                 public void onClick(DialogInterface dialogInterface, int i) {
-                                    workouts_format.append(input.getText().toString()).append("  \n");
+                                    workouts_format.append(input.getText().toString()).append(" " + reps.getText().toString() + "x" + weight.getText().toString()).append("  \n");
                                 }
                             });
                             builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
@@ -99,7 +103,7 @@ public class Workouts_Home extends AppCompatActivity {
                         }
 
                         for (String exer : workoutList){
-                            workouts_format.append(exer).append("  \n");
+                            workouts_format.append(exer).append(" " + reps.getText().toString() + "x" + weight.getText().toString()).append("  \n");
                         }
                         workouts_format.append(workouts.getText());
                         workouts.setText(workouts_format);
@@ -126,7 +130,7 @@ public class Workouts_Home extends AppCompatActivity {
                         List<String> workoutList = picker.getWorkouts(workout);
                         StringBuilder workouts_format = new StringBuilder();
                         for (String exer : workoutList){
-                            workouts_format.append(exer).append("  \n");
+                            workouts_format.append(exer).append(" " + reps.getText().toString() + "x" + weight.getText().toString()).append("  \n");
                         }
                         workouts_format.append(workouts.getText());
                         workouts.setText(workouts_format);
