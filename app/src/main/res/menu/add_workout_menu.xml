@@ -19,21 +19,13 @@
         android:id="@+id/tc"
         android:title="Tricep Curls"/>
     <item
-        android:id="@+id/military"
-        android:title="Militaries"/>
-    <item
         android:id="@+id/ht"
         android:title="Hip Thrusts"/>
-    <item
-        android:id="@+id/pp"
-        android:title="Push Presses"/>
-    <item
-        android:id="@+id/fs"
-        android:title="Front Squats"/>
     <item
         android:id="@+id/lp"
         android:title="Lat Pulldowns"/>
     <item
-        android:id="@+id/sadr"
-        android:title="Single Arm Dumbbell Rows"/>
+        android:id="@+id/custum"
+        android:title="**CUSTOM**"/>
+
 </menu>

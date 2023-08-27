@@ -1,5 +1,6 @@
 package com.example.ultimateproject;
 
+import android.content.DialogInterface;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 
@@ -10,10 +11,17 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Calendar;
 import java.util.Date;
+
+import android.text.InputType;
+import android.view.LayoutInflater;
 import android.view.MenuItem;
+import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.PopupMenu;
 import android.widget.PopupWindow;
 import android.view.MotionEvent;
+
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import android.widget.Button;
@@ -68,6 +76,28 @@ public class Workouts_Home extends AppCompatActivity {
                         String workout = menuItem.getTitle().toString();
                         List<String> workoutList = picker.getWorkouts(workout);
                         StringBuilder workouts_format = new StringBuilder();
+                        if (workout.equals("**CUSTOM**")){
+                            AlertDialog.Builder builder = new AlertDialog.Builder(getApplicationContext());
+                            builder.setTitle("Enter New Exercise");
+                            // Set up the input
+                            EditText input = new EditText(getApplicationContext());
+                            input.setInputType(InputType.TYPE_CLASS_TEXT);
+                            builder.setView(input);
+                            builder.setPositiveButton("ADD", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialogInterface, int i) {
+                                    workouts_format.append(input.getText().toString()).append("  \n");
+                                }
+                            });
+                            builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialogInterface, int i) {
+                                    dialogInterface.cancel();
+                                }
+                            });
+                            builder.show();
+                        }
+
                         for (String exer : workoutList){
                             workouts_format.append(exer).append("  \n");
                         }
@@ -127,11 +157,13 @@ public class Workouts_Home extends AppCompatActivity {
             public void onClick(View view) {
                 Date currentTime = Calendar.getInstance().getTime();
                 StringBuilder workouts_format = new StringBuilder();
-                workouts_format.append(currentTime.toString()).append("  \n\n");
+                workouts_format.append("\n").append(currentTime.toString()).append("  \n");
                 workouts_format.append(workouts.getText());
                 workouts.setText(workouts_format);
+
             }
         });
+
     }
 
 
