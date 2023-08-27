@@ -6,7 +6,16 @@
     android:layout_height="wrap_content"
     android:fitsSystemWindows="true"
     tools:context=".Workouts_Home">
-
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/newdaybtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="58px"
+        android:textStyle="bold"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="100dp"
+        android:backgroundTint="#001278"
+        android:text="End Workout" />
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/app_bar"
         android:layout_width="match_parent"
@@ -45,11 +54,12 @@
 
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/randomworkout"
-                    android:layout_width="wrap_content"
+                    android:layout_width="240dp"
                     android:layout_height="match_parent"
                     android:layout_marginTop="10dp"
                     android:layout_marginBottom="10dp"
                     android:layout_marginLeft="10dp"
+                    android:textStyle="bold"
                     android:layout_marginRight="10dp"
                     android:text="ADD RANDOM EXERCISE"
                     android:backgroundTint="#DA0303"
@@ -60,8 +70,11 @@
                     android:layout_width="150px"
                     android:layout_height="match_parent"
                     android:textSize="100px"
+                    android:layout_marginRight="10dp"
                     android:layout_marginTop="10dp"
+                    android:layout_marginLeft="10dp"
                     android:textStyle="bold"
+                    android:layout_gravity="right"
                     android:layout_marginBottom="10dp"
                     android:backgroundTint="#DA0303"
                     android:text="-" />

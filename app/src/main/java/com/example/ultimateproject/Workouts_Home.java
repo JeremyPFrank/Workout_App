@@ -1,11 +1,15 @@
 package com.example.ultimateproject;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import com.google.android.material.appbar.CollapsingToolbarLayout;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
-
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.Calendar;
+import java.util.Date;
 import android.view.MenuItem;
 import android.widget.PopupMenu;
 import android.widget.PopupWindow;
@@ -30,16 +34,19 @@ public class Workouts_Home extends AppCompatActivity {
     private WorkoutPicker picker = new WorkoutPicker();
     Button add_workoutbtn;
     Button ran_workoutbtn;
+    Button remove_workoutbtn;
+    Button new_workoutbtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         binding = ActivityWorkoutsHomeBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
         add_workoutbtn = findViewById(R.id.addworkoutbtn);
         ran_workoutbtn = findViewById(R.id.randomworkout);
+        remove_workoutbtn = findViewById(R.id.removeworkout);
+        new_workoutbtn = findViewById(R.id.newdaybtn);
         TextView workouts = (TextView) findViewById(R.id.Workout_list);
 
         Toolbar toolbar = binding.toolbar;
@@ -62,7 +69,7 @@ public class Workouts_Home extends AppCompatActivity {
                         List<String> workoutList = picker.getWorkouts(workout);
                         StringBuilder workouts_format = new StringBuilder();
                         for (String exer : workoutList){
-                            workouts_format.append(exer).append("\n");
+                            workouts_format.append(exer).append("  \n");
                         }
                         workouts_format.append(workouts.getText());
                         workouts.setText(workouts_format);
@@ -89,7 +96,7 @@ public class Workouts_Home extends AppCompatActivity {
                         List<String> workoutList = picker.getWorkouts(workout);
                         StringBuilder workouts_format = new StringBuilder();
                         for (String exer : workoutList){
-                            workouts_format.append(exer).append("\n");
+                            workouts_format.append(exer).append("  \n");
                         }
                         workouts_format.append(workouts.getText());
                         workouts.setText(workouts_format);
@@ -100,6 +107,32 @@ public class Workouts_Home extends AppCompatActivity {
                 ran_popupMenu.show();
             }
         });
+        remove_workoutbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                StringBuilder workouts_format = new StringBuilder();
+                String wklist = workouts.getText().toString();
+                for (int i =0;i < wklist.length()-4;i++){
+                    if (wklist.charAt(i) == ' ' && wklist.charAt(i+1) == ' '){//if we find a double space
+                        workouts_format.append(workouts.getText());
+                        workouts_format.delete(0,i+3);
+                        workouts.setText(workouts_format);
+                        break;
+                    }
+                }
+            }
+        });
+        new_workoutbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Date currentTime = Calendar.getInstance().getTime();
+                StringBuilder workouts_format = new StringBuilder();
+                workouts_format.append(currentTime.toString()).append("  \n\n");
+                workouts_format.append(workouts.getText());
+                workouts.setText(workouts_format);
+            }
+        });
     }
+
 
 }
