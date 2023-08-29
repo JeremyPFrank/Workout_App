@@ -3,7 +3,8 @@ package com.example.ultimateproject;
 import android.content.DialogInterface;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-
+import android.app.Application;
+import android.content.Context;
 import com.google.android.material.appbar.CollapsingToolbarLayout;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
@@ -40,6 +41,7 @@ public class Workouts_Home extends AppCompatActivity {
 
     private ActivityWorkoutsHomeBinding binding;
     private WorkoutPicker picker = new WorkoutPicker();
+    private static Application sApplication;
     Button add_workoutbtn;
     Button ran_workoutbtn;
     Button remove_workoutbtn;
@@ -81,16 +83,18 @@ public class Workouts_Home extends AppCompatActivity {
                         List<String> workoutList = picker.getWorkouts(workout);
                         StringBuilder workouts_format = new StringBuilder();
                         if (workout.equals("**CUSTOM**")){
-                            AlertDialog.Builder builder = new AlertDialog.Builder(getApplicationContext());
+                            AlertDialog.Builder builder = new AlertDialog.Builder(Workouts_Home.this);
                             builder.setTitle("Enter New Exercise");
                             // Set up the input
-                            EditText input = new EditText(getApplicationContext());
+                            EditText input = new EditText(Workouts_Home.this);
                             input.setInputType(InputType.TYPE_CLASS_TEXT);
                             builder.setView(input);
                             builder.setPositiveButton("ADD", new DialogInterface.OnClickListener() {
                                 @Override
                                 public void onClick(DialogInterface dialogInterface, int i) {
                                     workouts_format.append(input.getText().toString()).append(" " + reps.getText().toString() + "x" + weight.getText().toString()).append("  \n");
+                                    workouts_format.append(workouts.getText());
+                                    workouts.setText(workouts_format);
                                 }
                             });
                             builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
@@ -101,13 +105,13 @@ public class Workouts_Home extends AppCompatActivity {
                             });
                             builder.show();
                         }
-
-                        for (String exer : workoutList){
-                            workouts_format.append(exer).append(" " + reps.getText().toString() + "x" + weight.getText().toString()).append("  \n");
+                        else {
+                            for (String exer : workoutList) {
+                                workouts_format.append(exer).append(" " + reps.getText().toString() + "x" + weight.getText().toString()).append("  \n");
+                            }
+                            workouts_format.append(workouts.getText());
+                            workouts.setText(workouts_format);
                         }
-                        workouts_format.append(workouts.getText());
-                        workouts.setText(workouts_format);
-                        //Toast.makeText(Workouts_Home.this,"You Clicked " + menuItem.getTitle(), Toast.LENGTH_SHORT).show();
                         return true;
                     }
                 });
