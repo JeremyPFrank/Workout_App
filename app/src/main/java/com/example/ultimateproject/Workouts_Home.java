@@ -48,7 +48,7 @@ public class Workouts_Home extends AppCompatActivity {
     Button new_workoutbtn;
     TextView reps;
     TextView weight;
-
+    //TextView workouts = (TextView) findViewById(R.id.Workout_list);
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -170,8 +170,27 @@ public class Workouts_Home extends AppCompatActivity {
                 workouts.setText(workouts_format);
 
             }
+
         });
 
+    }
+    protected void onResume(){
+        super.onResume();
+        TextView workouts = (TextView) findViewById(R.id.Workout_list);
+        SharedPreferences sh = getSharedPreferences("MySharedPref", MODE_PRIVATE);
+        String sworkouts = sh.getString("sworkouts", "");
+        workouts.setText(sworkouts);
+    }
+    protected void onPause(){
+        super.onPause();
+        TextView workouts = (TextView) findViewById(R.id.Workout_list);
+        //do stuff when the activity is destroyed
+        SharedPreferences sharedPreferences = getSharedPreferences("MySharedPref",MODE_PRIVATE);
+        // Creating an Editor
+        SharedPreferences.Editor myEdit = sharedPreferences.edit();
+        // Storing the key and its value
+        myEdit.putString("sworkouts", workouts.getText().toString());
+        myEdit.apply();
     }
 
 
