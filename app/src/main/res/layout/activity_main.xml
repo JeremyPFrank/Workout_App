@@ -16,7 +16,7 @@
         android:layout_marginEnd="50dp"
         android:layout_marginBottom="30dp"
         android:gravity="center"
-        android:text="Sign In"
+        android:text="Welcome"
         android:textSize="50dp"
         android:textStyle="bold|italic"
         android:textColor="@color/black" />
@@ -26,7 +26,7 @@
         android:id="@+id/username"
         android:background="#4D000000"
         android:layout_below="@+id/signin"
-        android:hint="Username"
+        android:hint="Name"
         android:textColorHint="@color/black"
         android:textColor="@color/black"
         android:layout_margin="10dp"
@@ -47,8 +47,8 @@
         android:background="#4D000000"
         android:drawableLeft="@drawable/baseline_security_24"
         android:drawablePadding="20dp"
-        android:hint="Password"
-        android:inputType="textPassword"
+        android:hint="Fitness Goal"
+        android:inputType="text"
         android:padding="20dp"
         android:textColor="@color/black"
         android:textColorHint="@color/black" />
@@ -57,24 +57,28 @@
         android:layout_height="wrap_content"
         android:id="@+id/noacc"
         android:layout_below="@id/password"
-        android:text="No Account? Sign Up"
+        android:text=""
         android:layout_centerHorizontal="true"
         android:textColor="@color/black"
         android:textSize="12dp"
         android:gravity="center"
         />
+
     <com.google.android.material.button.MaterialButton
-        android:layout_width="130dp"
-        android:layout_height="wrap_content"
         android:id="@+id/loginbtn"
+        android:layout_width="130dp"
+        android:layout_height="80dp"
         android:layout_below="@+id/noacc"
-        android:text="LOGIN"
-        android:backgroundTint="@color/white"
-        app:strokeColor="#FF0C0C"
-        app:strokeWidth="4dp"
-        android:textColor="#FD0808"
         android:layout_centerHorizontal="true"
-        android:layout_margin="20dp"/>
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
+        android:backgroundTint="@color/white"
+        android:text="LOGIN"
+        android:textColor="#FD0808"
+        app:strokeColor="#FF0C0C"
+        app:strokeWidth="4dp" />
 
 
     <TextView

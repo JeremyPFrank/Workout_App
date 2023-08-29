@@ -32,13 +32,14 @@ public class MainActivity extends AppCompatActivity {
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (username.getText().toString().equals("admin") && password.getText().toString().equals("admin")) {
-                    Toast.makeText(MainActivity.this, "Login Successful", Toast.LENGTH_SHORT).show();
-                    openActivity2();
-                } else {
-                    Toast.makeText(MainActivity.this, "Incorrect Username/Password!", Toast.LENGTH_SHORT).show();
+                //if (username.getText().toString().equals("admin") && password.getText().toString().equals("admin")) {
+                    Toast.makeText(MainActivity.this, "Welcome " + username.getText().toString() + "!\n" + password.getText().toString() + "!\nYou can do it!" , Toast.LENGTH_SHORT).show();
 
-                }
+                    openActivity2();
+                //} else {
+                    //Toast.makeText(MainActivity.this, "Incorrect Username/Password!", Toast.LENGTH_SHORT).show();
+
+               // }
             }
         });
     }
